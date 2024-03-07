@@ -6,8 +6,8 @@ import React from "react";
 function Team() {
   return (
     <div className="w-[881px] h-[776px] flex flex-col px-5  mt-5 bg-white rounded-xl mb-10 drop-shadow-lg">
-      <p className="text-2xl font-semibold mt-4 mb-10">Team</p>
-      <p className="w-[830px] h-[52px] mb-5">
+      <p className="text-2xl font-semibold mt-5">Team</p>
+      <p className="w-[830px] h-[52px] my-5">
         Lorem ipsum dolor sit amet consectetur. Id consequat adipiscing arcu nibh. Eget mattis in mi
         integer sit egestas. Proin tempor id pretium quam. Facilisis purus convallis quam augue.
       </p>
