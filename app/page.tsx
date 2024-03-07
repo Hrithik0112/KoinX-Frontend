@@ -1,15 +1,15 @@
 "use client";
-import AboutCoin from "@/components/AboutCoin";
-import CTA from "@/components/CTA";
-import CoinDetailTabs from "@/components/CoinDetailTabs";
-import CoinDetails from "@/components/CoinDetails";
+import AboutCoin from "@/components/Left-Section/AboutCoin";
+import CTA from "@/components/Right-Section/CTA";
+import CoinDetailTabs from "@/components/Left-Section/CoinDetailTabs";
+import CoinDetails from "@/components/Left-Section/CoinDetails";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import Performence from "@/components/Performence";
-import Sentiment from "@/components/Sentiment";
-import Team from "@/components/Team";
-import Tokenomics from "@/components/Tokenomics";
-import TrendingCoins from "@/components/TrendingCoins";
+import Performence from "@/components/Left-Section/Performence";
+import Sentiment from "@/components/Left-Section/Sentiment";
+import Team from "@/components/Left-Section/Team";
+import Tokenomics from "@/components/Left-Section/Tokenomics";
+import TrendingCoins from "@/components/Right-Section/TrendingCoins";
 
 export default function Home() {
   return (

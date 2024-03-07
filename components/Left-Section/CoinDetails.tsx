@@ -3,7 +3,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import TradingViewWidget from "./TradingViewWidget";
+import TradingViewWidget from "../TradingViewWidget";
 import {
   BITCOIN_API,
   SIMPLE_PRICE_API,
