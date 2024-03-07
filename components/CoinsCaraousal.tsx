@@ -11,20 +11,16 @@ import {
 } from "@/components/ui/carousel";
 import axios from "axios";
 import Image from "next/image";
-import { cn } from "@/lib/utils";
+import { TRENDING_COINS_API, cn, formatToTwoDecimalPoints } from "@/lib/utils";
 
 export function CoinsCarousal() {
   const [trendingcoin, setTrendingCoin] = React.useState<any>([]);
   async function getTrendingCoin() {
-    const response = await axios.get(`https://api.coingecko.com/api/v3/search/trending`);
-    // console.log(response.data.coins);
+    const response = await axios.get(TRENDING_COINS_API);
     const trendingCoins = await response.data.coins;
     setTrendingCoin(trendingCoins);
   }
 
-  function formatToTwoDecimalPoints(number: Number) {
-    return parseFloat(number?.toFixed(2));
-  }
   React.useEffect(() => {
     getTrendingCoin();
   }, []);

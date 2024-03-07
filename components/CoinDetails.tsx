@@ -4,19 +4,24 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import TradingViewWidget from "./TradingViewWidget";
-import { cn } from "@/lib/utils";
+import {
+  BITCOIN_API,
+  SIMPLE_PRICE_API,
+  absoluteValueWithTwoDecimalPoints,
+  cn,
+  numberWithCommasINR,
+  numberWithCommasUSD,
+} from "@/lib/utils";
 
 function CoinDetails() {
   const [coins, setCoins] = useState<any>([]);
   const [coinDetails, setCoinDetails] = useState<any>("");
   async function getCoinData() {
-    const response = await axios.get(
-      `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=inr%2Cusd&include_24hr_change=true`
-    );
+    const response = await axios.get(SIMPLE_PRICE_API);
     setCoins(response.data?.bitcoin);
   }
   async function getCoinDetails() {
-    const response = await axios.get(`https://api.coingecko.com/api/v3/coins/bitcoin`);
+    const response = await axios.get(BITCOIN_API);
     // console.log(response);
     setCoinDetails(response.data);
   }
@@ -25,17 +30,6 @@ function CoinDetails() {
     getCoinDetails();
     getCoinData();
   }, []);
-
-  function absoluteValueWithTwoDecimalPoints(number: Number) {
-    return Math.abs(parseFloat(number?.toFixed(2)));
-  }
-
-  function numberWithCommas(x: Number) {
-    return x?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
-  function numberWithCommasRuppes(number: Number) {
-    return number?.toLocaleString("en-IN");
-  }
 
   let profit = coins.usd_24h_change >= 0;
   return (
@@ -60,8 +54,8 @@ function CoinDetails() {
         {/* price */}
         <div className="flex">
           <div className="flex flex-col mr-5">
-            <p className="font-bold text-4xl">${numberWithCommas(coins.usd)}</p>
-            <p className="font-medium text-lg">₹{numberWithCommasRuppes(coins.inr)}</p>
+            <p className="font-bold text-4xl">${numberWithCommasUSD(coins.usd)}</p>
+            <p className="font-medium text-lg">₹{numberWithCommasINR(coins.inr)}</p>
           </div>
           <div className="flex items-start justify-start">
             <p

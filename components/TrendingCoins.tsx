@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import { TRENDING_COINS_API, absoluteValueWithTwoDecimalPoints, cn } from "@/lib/utils";
 import axios from "axios";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
@@ -8,16 +8,12 @@ import React, { useEffect, useState } from "react";
 function TrendingCoins() {
   const [trendingcoin, setTrendingCoin] = useState<any>([]);
   async function getTrendingCoin() {
-    const response = await axios.get(`https://api.coingecko.com/api/v3/search/trending`);
-    // console.log(response.data.coins);
+    const response = await axios.get(TRENDING_COINS_API);
     const trendingCoins = await response.data.coins;
     const top3coins = await trendingCoins.slice(0, 3);
     setTrendingCoin(top3coins);
   }
 
-  function absoluteValueWithTwoDecimalPoints(number: Number) {
-    return Math.abs(parseFloat(number?.toFixed(2)));
-  }
   useEffect(() => {
     getTrendingCoin();
   }, []);
