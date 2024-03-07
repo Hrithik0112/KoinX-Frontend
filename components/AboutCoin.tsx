@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import { Button } from "./ui/button";
@@ -6,7 +7,7 @@ function AboutCoin() {
   return (
     <div className="w-[881px] h-[995px] px-5 mt-10 bg-white rounded-xl drop-shadow-lg">
       {/* heading */}
-      <p className="text-2xl font-semibold my-2">About Bitcoin</p>
+      <div className="text-2xl font-semibold my-2">About Bitcoin</div>
       {/* content */}
       <div className="flex flex-col w-[830px] ">
         {/* content 1 */}

@@ -1,3 +1,4 @@
+"use client";
 import AboutCoin from "@/components/AboutCoin";
 import CTA from "@/components/CTA";
 import CoinDetailTabs from "@/components/CoinDetailTabs";
