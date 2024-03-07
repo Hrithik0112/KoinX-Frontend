@@ -20,10 +20,12 @@ function Performence() {
               </div>
               <div className="absolute bottom-0 translate-y-10 right-0 mr-4 mb-4">
                 <div className="relative">
-                  <div className=" text-white py-2 px-4 rounded-lg shadow-lg">48637.83</div>
-                  <div className="absolute bg-black top-0 right-0 w-0 h-0 border-t-4 border-r-4 border-b-transparent border-l-transparent"></div>
-
-                  {/* <div className=" absolute top-0 right-0 w-0 h-0 border-l-[50px] border-l-transparent border-b-[75px] border-b-black border-r-[50px] border-r-black"></div> */}
+                  <div className="text-black py-2 px-4 rounded-lg text-sm font-medium">
+                    48637.83
+                  </div>
+                  <p className="absolute text-black text-4xl -translate-y-14 translate-x-6">
+                    &#9206;
+                  </p>
                 </div>
               </div>
             </div>
@@ -56,7 +58,7 @@ function Performence() {
             Fundementals
             <Image src="/info.svg" alt="info" width={20} height={20} className="ml-1" />
           </p>
-          <div className="h-[270px]  w-[820px] flex text-white justify-center">
+          <div className="h-[270px]  w-[820px] flex justify-center mt-5">
             <div className="flex flex-col w-[383PX] h-[270px] mr-10">
               <div className="w-[343px] h-[54px] flex justify-between items-center border-b-2 border-black">
                 <p>Bitcoin Price</p>

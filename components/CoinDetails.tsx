@@ -4,6 +4,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import TradingViewWidget from "./TradingViewWidget";
+import { cn } from "@/lib/utils";
 
 function CoinDetails() {
   const [coins, setCoins] = useState<any>([]);
@@ -25,13 +26,22 @@ function CoinDetails() {
     getCoinData();
   }, []);
 
-  function formatToTwoDecimalPoints(number: Number) {
-    return parseFloat(number?.toFixed(2));
+  function absoluteValueWithTwoDecimalPoints(number: Number) {
+    return Math.abs(parseFloat(number?.toFixed(2)));
   }
+
+  function numberWithCommas(x: Number) {
+    return x?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+  function numberWithCommasRuppes(number: Number) {
+    return number?.toLocaleString("en-IN");
+  }
+
+  let profit = coins.usd_24h_change >= 0;
   return (
     <div className="w-[881px] h-[700px] bg-white rounded-xl drop-shadow-lg ">
       <div className="m-4 flex ">
-        <p className="text-xl font-bold flex justify-center items-center mr-5">
+        <p className="text-2xll font-semibold flex justify-center items-center mr-5">
           <Image
             src={coinDetails?.image?.small}
             alt="bitcoinlogo"
@@ -50,14 +60,22 @@ function CoinDetails() {
         {/* price */}
         <div className="flex">
           <div className="flex flex-col mr-5">
-            <p className="font-bold text-4xl">${coins.usd}</p>
-            <p className="font-medium text-lg">₹{coins.inr}</p>
+            <p className="font-bold text-4xl">${numberWithCommas(coins.usd)}</p>
+            <p className="font-medium text-lg">₹{numberWithCommasRuppes(coins.inr)}</p>
           </div>
           <div className="flex items-start justify-start">
-            <p className="mr-3 w-fit h-fit p-1 border rounded-lg bg-green-300 border-green-300 text-white text-sm">
-              {formatToTwoDecimalPoints(coins?.usd_24h_change)}%
+            <p
+              className={
+                (cn("mr-3 w-fit h-fit p-1 border rounded-lg  text-base"),
+                profit
+                  ? "bg-green-300 border-green-300 text-green-600"
+                  : "bg-red-300 border-red-300 text-red-600")
+              }
+            >
+              {profit ? "⏶" : "⏷"}
+              {absoluteValueWithTwoDecimalPoints(coins?.usd_24h_change)}%
             </p>
-            <p className="text-xs mt-1">(24H)</p>
+            <p className="text-xs mt-1 ml-2">(24H)</p>
           </div>
         </div>
         {/* line */}
