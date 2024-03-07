@@ -56,8 +56,7 @@ const TradingViewWidget: React.FC<TradingViewWidgetProps> = () => {
             "all|1M"
           ],
            "lineColor": "rgba(41, 98, 255, 1)",
-          "topColor": "rgba(41, 98, 255, 0.1)",
-          "bottomColor": "rgba(255, 255, 255 , 0.9)"
+          "topColor": "rgba(41, 98, 255, 0.2)"
           
         }`;
       if (container.current) container.current.appendChild(script);

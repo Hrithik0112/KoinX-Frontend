@@ -17,7 +17,9 @@ function CTA() {
         </p>
       </section>
       <Image src="/Frame.svg" alt="frame" width={178} height={166} className="mb-5" />
-      <Button className="bg-white text-black font-bold w-fit">Get Started or FREE &rarr;</Button>
+      <Button className="bg-white text-black font-bold w-fit hover:bg-slate-200 hover:text-black">
+        Get Started or FREE &rarr;
+      </Button>
     </div>
   );
 }

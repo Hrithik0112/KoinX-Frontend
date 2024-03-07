@@ -11,7 +11,7 @@ function Navbar() {
         <p className="mr-8 font-bold">Crypto tax</p>
         <p className="mr-8 font-bold">Free Tools</p>
         <p className="mr-8 font-bold">Resource Center</p>
-        <Button className="bg-blue-600">Get Started</Button>
+        <Button className="bg-blue-600 hover:bg-blue-700 hover:text-white">Get Started</Button>
       </div>
     </div>
   );

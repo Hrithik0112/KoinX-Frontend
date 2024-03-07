@@ -55,7 +55,7 @@ function AboutCoin() {
                 <p className="text-white font-bold">
                   Calculate Your <br /> Profits
                 </p>
-                <Button className="bg-white text-black w-fit text-base h-fit">
+                <Button className="bg-white text-black w-fit text-base h-fit hover:bg-slate-200 hover:text-black">
                   Check Now &rarr;
                 </Button>
               </div>
@@ -64,7 +64,9 @@ function AboutCoin() {
               <Image src="/img1.svg" alt="image" width={126} height={126} />
               <div className="flex flex-col w-[195px] h-[104px] ml-4 my-auto ">
                 <p className="text-white font-bold">Calculate Your Tax liability</p>
-                <Button className="bg-white text-black w-fit">Check Now &rarr;</Button>
+                <Button className="bg-white text-black w-fit hover:bg-slate-200 hover:text-black">
+                  Check Now &rarr;
+                </Button>
               </div>
             </div>
           </div>

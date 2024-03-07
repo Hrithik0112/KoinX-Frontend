@@ -13,7 +13,7 @@ import TrendingCoins from "@/components/Right-Section/TrendingCoins";
 
 export default function Home() {
   return (
-    <div className="w-full bg-[#EFF2F5] ">
+    <div className="w-full bg-[#EFF2F5] " suppressHydrationWarning={true}>
       {/* bg-[#dfdfe2] */}
       <Navbar />
       <div className="w-[1328px] grid grid-cols-3 gap-5 mt-14 mx-auto">
